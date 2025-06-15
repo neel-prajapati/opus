@@ -1,0 +1,602 @@
+/* Opus Interiors - Modern, Elegant Theme */
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600&display=swap");
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background: #faf9f6;
+  color: #222;
+  font-family: "Times New Roman", "Georgia", "Times New Roman", serif;
+  transition: background 0.3s, color 0.3s;
+}
+.shiny-text {
+  color: #b5b5b5a4;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  /* color: #e0c98d; */
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 40%,
+    rgba(255, 255, 255, 0.8) 50%,
+    rgba(255, 255, 255, 0) 60%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  display: inline-block;
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: -100%;
+  }
+}
+
+.shiny-text.disabled {
+  animation: none;
+}
+
+.opus-hero {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+  /* padding: 0 1.5rem; */
+}
+.opus-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem 1rem 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+.opus-logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #bfa46d;
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+}
+/* .opus-nav {
+  overflow-x: scroll;
+} */
+.opus-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.opus-nav li {
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  font-family: "Times New Roman", "Georgia", serif;
+}
+.opus-nav li:hover {
+  color: #bfa46d;
+}
+.opus-intro {
+  text-align: center;
+  padding: 4rem 0 2rem 0;
+}
+.opus-intro h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+}
+.opus-intro p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+.opus-cta {
+  background: #bfa46d;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.opus-cta:hover {
+  background: #a08a54;
+}
+.opus-services {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+.opus-services h1 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 4rem;
+}
+.opus-services h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 200;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-service-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.opus-service {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04),
+    0 0 24px 4px rgba(191, 164, 109, 0.25),
+    0 0 40px 8px rgba(191, 164, 109, 0.12);
+  padding: 2rem 2.5rem;
+  font-size: 1.1rem;
+  color: #bfa46d;
+  font-weight: 500;
+  font-family: "Times New Roman", "Georgia", serif;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 0.3s;
+}
+.opus-service::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 1rem;
+  z-index: -1;
+  box-shadow: 0 0 32px 8px rgba(191, 164, 109, 0.35),
+    0 0 80px 16px rgba(191, 164, 109, 0.18);
+  opacity: 0.7;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.opus-service:hover::after {
+  opacity: 1;
+}
+.opus-service:hover {
+  box-shadow: 0 4px 24px 8px rgba(191, 164, 109, 0.35),
+    0 0 80px 16px rgba(191, 164, 109, 0.25);
+}
+.opus-services h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-about {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+.opus-about h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-learn-more {
+  background: none;
+  border: 1px solid #bfa46d;
+  color: #bfa46d;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.opus-learn-more:hover {
+  background: #bfa46d;
+  color: #fff;
+}
+.opus-projects {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+.opus-projects h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-project-list {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.opus-project {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 2rem 2.5rem;
+  /* margin: 2px; */
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 500;
+  min-width: 180px;
+  font-family: "Times New Roman", "Georgia", serif;
+}
+.opus-process {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+}
+.opus-process h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-process ol {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 0 0;
+}
+.opus-process li {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem 2rem;
+  font-size: 1rem;
+  color: #bfa46d;
+  font-weight: 500;
+  font-family: "Times New Roman", "Georgia", serif;
+}
+.opus-testimonials {
+  padding: 3rem 0 2rem 0;
+  text-align: center;
+  /* background: #f5f3ef; */
+}
+.opus-testimonials h2 {
+  margin-bottom: 2rem;
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-testimonials blockquote {
+  font-style: italic;
+  color: #444;
+  margin: 1.5rem auto;
+  max-width: 600px;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  padding: 1.5rem 2rem;
+  position: relative;
+}
+.opus-testimonials span {
+  display: block;
+  margin-top: 1rem;
+  color: #bfa46d;
+  font-weight: 500;
+}
+.opus-newsletter {
+  padding: 3rem 1rem 2rem 1rem;
+  text-align: center;
+}
+.opus-newsletter h1 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 400;
+  letter-spacing: 5px;
+  font-size: 4rem;
+}
+.opus-newsletter h2 {
+  font-family: "Great Vibes", cursive, "Montserrat", serif;
+  font-weight: 200;
+  letter-spacing: 5px;
+  font-size: 2rem;
+}
+.opus-newsletter form {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.opus-newsletter input[type="email"] {
+  padding: 0.5rem 1rem;
+  border-radius: 2rem;
+  border: 1px solid #bfa46d;
+  font-size: 1rem;
+}
+.opus-newsletter button {
+  background: #bfa46d;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.opus-newsletter button:hover {
+  background: #a08a54;
+}
+.opus-footer {
+  padding: 2rem 0 1rem 0;
+  text-align: center;
+  color: #888;
+  font-size: 0.95rem;
+  font-family: "Times New Roman", "Georgia", serif;
+}
+.opus-footer-links {
+  margin-top: 0.5rem;
+}
+.opus-footer a {
+  color: #bfa46d;
+  text-decoration: none;
+  margin: 0 0.5rem;
+  transition: color 0.2s;
+}
+.opus-footer a:hover {
+  color: #a08a54;
+}
+.opus-hero.dark,
+body.dark,
+html.dark {
+  background: #181818;
+  color: #f3e9d2;
+}
+.opus-hero.dark .opus-header,
+.opus-hero.dark .opus-service,
+.opus-hero.dark .opus-project,
+.opus-hero.dark .opus-process li,
+.opus-hero.dark .opus-testimonials blockquote {
+  background: #232323;
+  color: #f3e9d2;
+  border-color: #333;
+}
+.opus-hero.dark .opus-nav li,
+.opus-hero.dark .opus-footer,
+.opus-hero.dark .opus-footer a {
+  color: #e0c98d;
+}
+.opus-hero.dark .opus-logo {
+  color: #e0c98d;
+}
+.opus-hero.dark .opus-cta,
+.opus-hero.dark .opus-learn-more,
+.opus-hero.dark .opus-newsletter button {
+  background: #e0c98d;
+  color: #232323;
+  border-color: #e0c98d;
+}
+.opus-hero.dark .opus-cta:hover,
+.opus-hero.dark .opus-learn-more:hover,
+.opus-hero.dark .opus-newsletter button:hover {
+  background: #bfa46d;
+  color: #fff;
+}
+.opus-theme-toggle {
+  margin-left: 2rem;
+  background: none;
+  border: 1px solid #bfa46d;
+  color: #bfa46d;
+  border-radius: 2rem;
+  padding: 0.3rem 1.2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.opus-theme-toggle:hover {
+  background: #bfa46d;
+  color: #fff;
+}
+.opus-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  min-height: calc(100vh - 120px);
+}
+.opus-services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+.opus-service-card {
+  background: #fff;
+  border-radius: 1.5rem;
+  box-shadow: 0 4px 32px 0 rgba(191, 164, 109, 0.13),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.04);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 320px;
+  min-width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+  position: relative;
+}
+.opus-service-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 1rem;
+  margin-bottom: 1.2rem;
+  box-shadow: 0 2px 16px 0 rgba(191, 164, 109, 0.1);
+}
+.opus-service-card h3 {
+  margin: 0.5rem 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #bfa46d;
+  font-family: "Montserrat", serif;
+}
+.opus-service-card p {
+  font-size: 1rem;
+  color: #444;
+  font-family: "Montserrat", serif;
+}
+.opus-service-card:hover {
+  box-shadow: 0 8px 40px 0 rgba(191, 164, 109, 0.22),
+    0 2px 12px 0 rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px) scale(1.03);
+}
+.opus-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0 1rem 0;
+}
+.carousel-image-wrapper {
+  width: 78vw;
+  height: 40vw;
+  min-width: 180px;
+  min-height: 100px;
+  max-width: 98vw;
+  /* max-height: 220px; */
+  /* width: 950px;
+  height: 400px; */
+  border-radius: 1.2rem;
+  overflow: hidden;
+  box-shadow: 0 4px 32px 0 rgba(191, 164, 109, 0.13),
+    0 1.5px 8px 0 rgba(0, 0, 0, 0.04);
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.2rem;
+  transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1), box-shadow 0.3s;
+}
+.carousel-arrow {
+  background: #bfa46d;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px 0 rgba(191, 164, 109, 0.13);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-arrow:hover {
+  background: #a08a54;
+  color: #fff;
+  transform: scale(1.08);
+}
+.carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+.carousel-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #e0c98d;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.2s, background 0.2s;
+  display: inline-block;
+}
+.carousel-dot.active {
+  opacity: 1;
+  background: #bfa46d;
+}
+@media (max-width: 900px) {
+  .opus-nav {
+    /* flex-direction: column; */
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    align-items: stretch;
+  }
+  /* .opus-nav {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1rem 0.5rem;
+    align-items: stretch;
+  }
+  .opus-nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    align-items: stretch;
+    margin-top: 0.5rem;
+  }
+  .opus-nav li {
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+    border-radius: 1.5rem;
+  }
+  .opus-nav li a {
+    width: 100%;
+    display: block;
+  } */
+  .opus-nav li {
+    font-size: 0.7rem;
+    width: 100%;
+    text-align: center;
+    padding: 0.7rem 0;
+    border-radius: 1.5rem;
+  }
+  .opus-theme-toggle {
+    margin: 0.5rem auto 0 auto;
+    display: block;
+  }
+  .opus-services-grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  .opus-service-card {
+    max-width: 95vw;
+    min-width: 0;
+  }
+  .opus-service-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    padding: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .opus-header {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.2rem;
+  }
+  .opus-nav {
+    padding: 0.5rem 0.2rem;
+    border-radius: 1rem;
+  }
+  .opus-logo {
+    font-size: 2rem;
+  }
+  .carousel-image-wrapper {
+    width: 67vw;
+    height: 42vw;
+    min-width: 180px;
+    min-height: 100px;
+    max-width: 98vw;
+    max-height: 220px;
+  }
+  .opus-carousel {
+    gap: 0.5rem;
+  }
+}

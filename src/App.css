@@ -90,6 +90,18 @@ html {
 .opus-nav li:hover {
   color: #bfa46d;
 }
+.opus-nav li.active {
+  background: #d4c0a1;
+  color: #1c1c1c !important;
+  font-weight: bold;
+  box-shadow: 0 2px 12px 0 rgba(203, 175, 135, 0.13);
+  border-radius: 0.1rem;
+  padding: 0.5rem 1rem;
+  transition: background 0.7s, color 0.2s;
+}
+.opus-nav li.active a {
+  color: #1c1c1c !important;
+}
 .opus-intro {
   text-align: center;
   padding: 4rem 0 2rem 0;

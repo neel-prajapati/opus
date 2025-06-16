@@ -1,50 +1,51 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import { Portfolio, About, Services, Contact } from "./Pages";
 import "./App.css";
 // import { useState } from "react";
 import TrueFocus from "./components/focusText/TrueFocus";
+
+function Navbar() {
+  const location = useLocation();
+  return (
+    <nav className="opus-nav">
+      <div className={`shiny-text`} style={{ animationDuration: "5s" }}>
+        Opus Designs
+      </div>
+      <ul className="scroll-x">
+        <li className={location.pathname === "/" ? "active" : ""}>
+          <Link to="/">Home</Link>
+        </li>
+        <li className={location.pathname === "/services" ? "active" : ""}>
+          <Link to="/services">Services</Link>
+        </li>
+        <li className={location.pathname === "/portfolio" ? "active" : ""}>
+          <Link to="/portfolio">Portfolio</Link>
+        </li>
+        <li className={location.pathname === "/about" ? "active" : ""}>
+          <Link to="/about">About</Link>
+        </li>
+        <li className={location.pathname === "/contact" ? "active" : ""}>
+          <Link to="/contact">Contact</Link>
+        </li>
+      </ul>
+    </nav>
+  );
+}
 
 function App() {
   // const [dark, setDark] = useState(true);
 
   return (
     <Router>
-      {/* <div className={`opus-hero${dark ? " dark" : ""}`}> */}
       <div className={`opus-hero dark`}>
         <header className="opus-header">
-          <nav className="opus-nav">
-            {/* <img height={40} width={100} src="/opus-logo.png" /> */}
-            {/* <div className="opus-logo"> */}
-            <div className={`shiny-text`} style={{ animationDuration: "5s" }}>
-              Opus Designs
-            </div>
-
-            {/* </div> */}
-            {/* <button
-              className="opus-theme-toggle"
-              onClick={() => setDark((d) => !d)}
-              aria-label="Toggle dark mode"
-            >
-              {dark ? "🌙 Dark" : "☀️ Light"}
-            </button> */}
-            <ul className="scroll-x">
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/services">Services</Link>
-              </li>
-              <li>
-                <Link to="/portfolio">Portfolio</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/contact">Contact</Link>
-              </li>
-            </ul>
-          </nav>
+          <Navbar />
         </header>
         <Routes>
           <Route
@@ -59,9 +60,9 @@ function App() {
                     sentence="Designing Spaces, Crafting Stories!"
                     manualMode={false}
                     blurAmount={5}
-                    borderColor="red"
-                    animationDuration={0.5}
-                    pauseBetweenAnimations={1}
+                    borderColor="gainsboro"
+                    animationDuration={0.4}
+                    pauseBetweenAnimations={0.5}
                   />
                   {/* <p>Designing Spaces, Crafting Stories!</p> */}
                   <br />

@@ -91,16 +91,13 @@ html {
   color: #bfa46d;
 }
 .opus-nav li.active {
-  background: #d4c0a1;
-  color: #1c1c1c !important;
-  font-weight: bold;
-  box-shadow: 0 2px 12px 0 rgba(203, 175, 135, 0.13);
-  border-radius: 0.1rem;
-  padding: 0.5rem 1rem;
-  transition: background 0.7s, color 0.2s;
+  border: 1px solid gainsboro;
+  border-radius: 1rem;
+  padding: 0.1rem 1rem;
+  transition: padding 0.5s;
 }
 .opus-nav li.active a {
-  color: #1c1c1c !important;
+  color: gainsboro !important;
 }
 .opus-intro {
   text-align: center;

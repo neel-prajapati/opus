@@ -1,60 +1,63 @@
-import React from "react";
+// import React from "react";
 
 export default function Home() {
   return null; // The homepage is already rendered in App
 }
 
 export function Portfolio() {
-  const images = [
-    "/portfolio1.jpeg",
-    "/portfolio2.jpeg",
-    "/portfolio3.jpeg",
-    "/portfolio4.jpeg",
-    "/portfolio5.jpeg",
-    "/portfolio6.jpeg",
+  const projects = [
+    {
+      img: "/portfolio1.jpeg",
+      title: "Modern Living Room",
+      desc: "A contemporary living space featuring neutral tones, layered textures, and custom lighting for a warm, inviting atmosphere. Designed for both comfort and style, perfect for family gatherings and entertaining guests.",
+    },
+    {
+      img: "/portfolio2.jpeg",
+      title: "Luxury Master Suite",
+      desc: "A serene master bedroom retreat with plush fabrics, elegant gold accents, and a statement headboard. The design blends timeless luxury with modern simplicity for restful nights and inspired mornings.",
+    },
+    {
+      img: "/portfolio3.jpeg",
+      title: "Creative Workspace",
+      desc: "A bright, functional office with bespoke shelving, ergonomic furniture, and energizing color pops. Designed to boost productivity and creativity for remote work or business meetings.",
+    },
+    {
+      img: "/portfolio4.jpeg",
+      title: "Chic Dining Area",
+      desc: "A sophisticated dining space with a marble-top table, designer chairs, and ambient pendant lighting. The perfect setting for memorable dinners and celebrations.",
+    },
+    {
+      img: "/portfolio5.jpeg",
+      title: "Elegant Entryway",
+      desc: "A welcoming foyer with custom cabinetry, statement art, and layered lighting. Sets the tone for the home with a blend of function and first impressions.",
+    },
+    {
+      img: "/portfolio6.jpeg",
+      title: "Nature-Inspired Bathroom",
+      desc: "A tranquil bathroom oasis with natural stone, walk-in shower, and soft gold fixtures. Designed for relaxation and daily rejuvenation.",
+    },
   ];
-  const [current, setCurrent] = React.useState(0);
-  const next = () => setCurrent((c) => (c + 1) % images.length);
-  const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   return (
     <div className="opus-page">
       <section className="opus-newsletter">
         <h2>Our Portfolio</h2>
         <p>
-          A showcase of our favorite interior design projects. Swipe or use the
-          arrows to explore!
+          A showcase of our favorite interior design projects. Explore the
+          gallery below for inspiration!
         </p>
-        <div className="opus-carousel">
-          <button
-            className="carousel-arrow left"
-            onClick={prev}
-            aria-label="Previous image"
-          >
-            &#8592;
-          </button>
-          <div className="carousel-image-wrapper">
-            <img
-              src={images[current]}
-              alt={`Portfolio ${current + 1}`}
-              className="carousel-image"
-            />
-          </div>
-          <button
-            className="carousel-arrow right"
-            onClick={next}
-            aria-label="Next image"
-          >
-            &#8594;
-          </button>
-        </div>
-        <div className="carousel-dots">
-          {images.map((_, idx) => (
-            <span
-              key={idx}
-              className={`carousel-dot${idx === current ? " active" : ""}`}
-              onClick={() => setCurrent(idx)}
-            />
+        <p>Designs that speak for themselves!</p>
+        <div className="opus-portfolio-grid">
+          {projects.map((proj, idx) => (
+            <div className="opus-portfolio-card" key={idx}>
+              <img
+                src={proj.img}
+                alt={proj.title}
+                className="portfolio-image"
+              />
+              <h3>{proj.title}</h3>
+              <p>{proj.desc}</p>
+            </div>
           ))}
         </div>
       </section>
@@ -80,6 +83,49 @@ export function About() {
       </p>
       <br />
       <br />
+      <br />
+      <h2>Founder’s Note</h2>
+      <div className="about-flex">
+        <div className="about-img-col">
+          <img
+            src="/Melania_Trump.jpg"
+            alt="Founder's Image"
+            className="about-img"
+          />
+        </div>
+        <div className="about-quote-col">
+          <blockquote className="about-quote">
+            “Design, for me, has always been deeply personal. It’s not about
+            trends — it’s about people. About how you feel in a space, how it
+            holds your story, and how it becomes part of your everyday life.
+            <br />
+            <br />
+            That’s the kind of work we do at Opus — thoughtful, collaborative,
+            and crafted with soul.”
+          </blockquote>
+        </div>
+      </div>
+
+      <br />
+      <br />
+      <br />
+      <h2>Meet the Team</h2>
+      <div className="about-flex">
+        <div className="about-img-col">
+          <img src="/team.jpg" alt="Founder's Image" className="about-img" />
+        </div>
+        <div className="about-quote-col">
+          <blockquote className="about-quote">
+            At Opus, design is never a solo act. Behind every project is a team
+            of passionate designers, visual thinkers, and detail-lovers who
+            bring their craft to the table every day.
+            <br />
+            Together, we collaborate, challenge ideas, and turn big visions into
+            beautiful realities. <br /> We’re not just building spaces — we’re
+            building relationships.
+          </blockquote>
+        </div>
+      </div>
 
       <section className="opus-testimonials">
         <h2>What We Stand For:</h2>
@@ -188,20 +234,46 @@ export function Contact() {
         <br />
         <h2>Let’s bring your vision to life.</h2>
         <br />
-
-        <h3>
-          We’d love to hear from you — whether you’re ready to start your design
-          journey or just have a few questions.
-        </h3>
-        <h3>Contact us for inquiries, consultations, or collaborations.</h3>
-        <br />
-        <h3>Enter your email and we'll get in touch with you!</h3>
-        <br />
-
-        <form>
-          <input type="email" placeholder="Your email address" />
-          <button type="submit">Send</button>
+        <h3>Enter your details and we’ll get in touch with you:</h3>
+        <form className="contact-form">
+          <input type="text" name="name" placeholder="Full Name" required />
+          <input type="tel" name="phone" placeholder="Phone Number" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Email Address"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Message / Project Description"
+            rows={4}
+            required
+          />
+          <button type="submit">Send Message</button>
         </form>
+        <br />
+        <h3>Follow Us</h3>
+        <p>
+          Stay inspired, see our latest work, and get behind-the-scenes updates:
+        </p>
+        <div className="contact-socials">
+          <a
+            href="https://instagram.com/designs_by_opus"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+          |
+          <a
+            href="https://facebook.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Facebook
+          </a>
+        </div>
       </section>
     </div>
   );
